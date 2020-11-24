@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clear{
+    clear: both;
+}
+nav{
+    background-color: #101411;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    padding: 10px 5px;
+    margin: 0px 15px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+header h1{
+    color: #223b6e;
+    font-size: 50px;
+    margin: 30px 40px 4px 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+header p{
+    font-size: 20px;
+    text-align: center;
+}
+
+header span{
+    color: #1183d4;
+}
+
+article h3{
+    color: #12598c;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 20px 0px 15px 40px;
+}
+.table-title{
+    font-size: 25px;
+    color: #7491a6;
+    font-style: italic;
+    text-align: center;
+}
+article p {
+    max-width: 50%;
+    margin-left: 40px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: justify;
+    float: left;
+}
+
+#img1{
+    width: 390px;
+    float: right;
+    margin-right: 205px;
+}
+
+table{
+    width: 70%;
+    margin: auto !important;
+}
+
+table th{
+    background-color: #0c5991;
+    color: white;
+}
+
+table td{
+    background-color: #5397c9;
+}
+table th, table td{
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+    text-align: center;
+}
+.curiositys{
+    background-color:#8facba;
+    padding-bottom: 20px;
+}
+.curiositys h3{
+
+    text-decoration: underline;
+    background-color: #8facba;
+    font-size: 30px;
+    font-weight: 400;
+    color: #12598c;
+    margin: 20px 0px 20px 40px;
+}
+
+section h4{
+    font-size: 22px;
+    font-weight: 600;
+    color: #12598c;
+    font-style: italic;
+    margin: 0px 0px 0px 40px;
+}
+
+.curiositys p{
+    font-family: 'Sansita Swashed', cursive;
+    line-height: 30px;
+    font-size: 20px;
+    max-width: 70%;
+    color: white;
+    margin: 0px 0px 20px 40px;
+    text-align: justify;
+}
+.ref{
+    padding-top: 15px;
+    background-color:  #101411;;
+    text-align: center;
+}
+.ref a{
+    color: black;
+    margin: 10px;
+}
+.ref li{
+    display: inline-block;
+}
+
+.ref a:hover{
+    color: white;
+}
+
+.ref h4{
+    color: black;
+}
+footer{
+    font-size: 15px;
+    color: white;
+    background-color:  #101411;;
+    text-align: center;
+    padding: 20px;
+}
