@@ -1,7 +1,7 @@
-let p = 55;
+let p = 85;
 
 switch (true) {
-    case p >= 90:
+    case (p >= 90):
         console.log('A');
         break;
     case (p >= 80):

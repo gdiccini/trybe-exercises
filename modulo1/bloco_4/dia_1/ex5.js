@@ -1,6 +1,6 @@
 let a = 200;
 let b = 90;
-let c = 60;
+let c = 'c';
 let z = a + b + c;
 
 if (typeof(a) != 'number' || typeof(b) != 'number' || typeof(c) != 'number'){
