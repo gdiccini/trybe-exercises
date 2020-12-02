@@ -66,11 +66,25 @@
           square.style.backgroundColor = 'white';
         }
         changeCenterColor();
-        /*
-        4. Crie uma função que corrija o texto da tag <h1>.
-        5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-        6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
+        
+        
+        //4. Crie uma função que corrija o texto da tag <h1>.
+        function correctText(){
+          let paragraph = document.getElementsByTagName('h1')[0];
+          paragraph.innerText = 'Exercício 5.1 - JavaScript';
+        }
+        correctText();
+        
+        
+        //5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+        function textToUpperCase(){
+          let paragraph = document.getElementsByTagName('p')[1].innerText;
+          document.getElementsByTagName('p')[1].innerText = paragraph.toUpperCase();
+        }
+        textToUpperCase();
+        
+        //6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        
     </script>
   </body>
 </html>
