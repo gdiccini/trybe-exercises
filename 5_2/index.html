@@ -57,7 +57,8 @@
   </head>
   <body>
     <script>
-      //EX1
+
+      //ex1
       let elementH1 = document.createElement('h1');
       elementH1.innerText = 'Exercício 5.2 - JavaScript DOM';
       document.body.appendChild(elementH1);
@@ -71,6 +72,26 @@
       let elementDiv2 = document.createElement('div');
       elementDiv2.className = 'center-content';
       elementDiv.appendChild(elementDiv2);
+
+      //ex4
+      let elementP = document.createElement('p');
+      elementDiv2.appendChild(elementP);
+
+      //ex5
+      let elementDivLeft = document.createElement('div');
+      elementDivLeft.className = 'left-content';
+      elementDiv.appendChild(elementDivLeft);
+
+      //ex6
+      let elementDivRight = document.createElement('div');
+      elementDivRight.className = 'right-content';
+      elementDiv.appendChild(elementDivRight);
+
+      //ex7
+      let elementImg = document.createElement('img');
+      elementImg.className = 'small-image';
+      elementImg.src = 'https://picsum.photos/200';
+      elementDivLeft.appendChild(elementImg);
     </script>
   </body>
 </html>
