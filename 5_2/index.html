@@ -128,6 +128,18 @@
       //ex4
       let rightElement = document.querySelector('.right-content');
       rightElement.style.marginRight = 'auto';
+
+      //ex5
+      let centerElement = document.querySelector('.center-content');
+      centerElement.style.backgroundColor = 'green';
+
+      //ex6
+      let liArray = document.querySelectorAll('li');
+      let n = liArray.length;
+      for(let index = n - 2; index < n; index += 1){
+        let liElement = liArray[index];
+        rightElement.removeChild(liElement);
+      }
       
     </script>
   </body>
