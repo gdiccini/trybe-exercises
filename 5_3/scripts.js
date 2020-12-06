@@ -52,7 +52,7 @@ function createDaysOfTheWeek() {
 
   holidayButton('Feriados');
 
-  // ex3
+  // ex3 - holydaysbackground
   function displayHolidays(){
     let buttonElement = document.querySelector('#btn-holyday');
     let holydays = document.querySelectorAll('.holyday');
@@ -64,10 +64,20 @@ function createDaysOfTheWeek() {
           holydays[index].style.backgroundColor = backgroundColor;    
         } else {
           holydays[index].style.backgroundColor = setNewColor;
-        }
-        
+        }        
       }    
     });
   }
 
   displayHolidays();
+
+  //ex4 - friday btn
+  
+  function fridayBtn(){
+    let frBTN = document.createElement('button');
+    frBTN.innerText = 'Sexta-feira';
+    let getDivButtons = document.querySelector('.buttons-container');  
+    getDivButtons.appendChild(frBTN);
+  }
+
+  fridayBtn();
