@@ -124,3 +124,14 @@ function createDaysOfTheWeek() {
   
   zoomIn();
   zoomOut();
+
+  // ex7
+
+  function addTask(task){
+    let taskContainer = document.querySelector('.my-tasks');
+    let taskToAdd = document.createElement('span');
+    taskToAdd.innerText = task;
+    taskContainer.appendChild(taskToAdd);
+  }
+
+  addTask('Projeto');
