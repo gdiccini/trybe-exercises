@@ -58,6 +58,7 @@ function createDaysOfTheWeek() {
     let holydays = document.querySelectorAll('.holyday');
     let backgroundColor = 'rgb(238,238,238)';
     let setNewColor = 'green';
+
     buttonElement.addEventListener('click', function(event){
       for (let index = 0; index < holydays.length; index += 1){
         if (holydays[index].style.backgroundColor === setNewColor){
@@ -76,8 +77,30 @@ function createDaysOfTheWeek() {
   function fridayBtn(){
     let frBTN = document.createElement('button');
     frBTN.innerText = 'Sexta-feira';
+    frBTN.id = 'btn-friday';
     let getDivButtons = document.querySelector('.buttons-container');  
     getDivButtons.appendChild(frBTN);
   }
 
   fridayBtn();
+
+  // ex5 - displayFridays
+
+  function displayFridays(array){
+    let buttonFriday = document.querySelector('#btn-friday')
+    let getFridays = document.querySelectorAll('.friday');
+    let setNewText = 'Sexta-Feira';
+
+    buttonFriday.addEventListener('click', function(event){
+      for (let index = 0; index < getFridays.length; index += 1){
+        if (getFridays[index].innerText !== setNewText){
+          getFridays[index].innerText = setNewText;
+        } else {
+          getFridays[index].innerText = dezFridays[index];
+        }
+      }
+    });
+  }
+
+  let dezFridays = [ 4, 11, 18, 25];
+  displayFridays(dezFridays);
