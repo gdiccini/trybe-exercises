@@ -135,3 +135,5 @@ function createDaysOfTheWeek() {
   }
 
   addTask('Projeto');
+
+  // ex8
