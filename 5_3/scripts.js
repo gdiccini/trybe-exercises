@@ -85,7 +85,6 @@ function createDaysOfTheWeek() {
   fridayBtn();
 
   // ex5 - displayFridays
-
   function displayFridays(array){
     let buttonFriday = document.querySelector('#btn-friday')
     let getFridays = document.querySelectorAll('.friday');
@@ -104,3 +103,24 @@ function createDaysOfTheWeek() {
 
   let dezFridays = [ 4, 11, 18, 25];
   displayFridays(dezFridays);
+
+  // ex6
+  function zoomIn(){
+    let getDays = document.querySelector('#days');
+
+    getDays.addEventListener('mouseover', function(event) {
+      event.target.style.fontSize = '30px';
+      event.target.style.fontWeight = '600';
+    })
+  };
+
+  function zoomOut(){
+    let getDays = document.querySelector('#days');
+    getDays.addEventListener('mouseout', function(event){
+      event.target.style.fontSize = '20px';
+      event.target.style.fontWeight = '200';
+    })
+  }
+  
+  zoomIn();
+  zoomOut();
