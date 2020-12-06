@@ -146,7 +146,7 @@ function createDaysOfTheWeek() {
     taskContainer.appendChild(setDiv);
   };
 
-  coloredSubtitle('blue');
+  coloredSubtitle('red');
 
   // ex9
   function selectTask(){
@@ -186,3 +186,22 @@ function createDaysOfTheWeek() {
   
   setDayColor();
   
+  // ex_bônus
+
+  function throwCommitment(){
+    let commitment = document.getElementById('task-input');
+    let addBtn = document.getElementById('btn-add');
+    let tasksList = document.querySelector('.task-list');
+
+    addBtn.addEventListener('click', function(event){
+      let listElement = document.createElement('li');
+      listElement.innerText = commitment.value;
+      if (listElement.innerText === ''){
+        alert('Nenhum compromisso digitado.')
+      } else{
+        tasksList.appendChild(listElement);
+      }      
+    });
+  };
+
+  throwCommitment();
