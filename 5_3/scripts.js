@@ -147,3 +147,19 @@ function createDaysOfTheWeek() {
   };
 
   coloredSubtitle('blue');
+
+  // ex 9
+  function selectTask(){
+    let taskSelected = document.querySelector('.my-tasks div');
+    taskSelected.addEventListener('click', function(event){
+      if (taskSelected.className = 'task'){
+        taskSelected.className = 'task selected';
+      } else {
+        taskSelected.className = 'task';
+      }
+    })
+  }
+
+  selectTask();
+
+  
