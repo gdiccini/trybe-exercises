@@ -40,3 +40,16 @@ function createDaysOfTheWeek() {
   }
 
   injectDays();
+
+  // ex2
+  function holidayButton(string){
+    let divBtn = document.querySelector('.buttons-container');
+    let buttonElement = document.createElement('button');
+    buttonElement.innerText = string;
+    buttonElement.id = 'btn-holyday';
+    divBtn.appendChild(buttonElement);
+  }
+
+  holidayButton('Feriados');
+
+  // ex3
