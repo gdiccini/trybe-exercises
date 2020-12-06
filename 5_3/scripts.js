@@ -53,3 +53,21 @@ function createDaysOfTheWeek() {
   holidayButton('Feriados');
 
   // ex3
+  function displayHolidays(){
+    let buttonElement = document.querySelector('#btn-holyday');
+    let holydays = document.querySelectorAll('.holyday');
+    let backgroundColor = 'rgb(238,238,238)';
+    let setNewColor = 'green';
+    buttonElement.addEventListener('click', function(event){
+      for (let index = 0; index < holydays.length; index += 1){
+        if (holydays[index].style.backgroundColor === setNewColor){
+          holydays[index].style.backgroundColor = backgroundColor;    
+        } else {
+          holydays[index].style.backgroundColor = setNewColor;
+        }
+        
+      }    
+    });
+  }
+
+  displayHolidays();
