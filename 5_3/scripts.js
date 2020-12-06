@@ -137,3 +137,13 @@ function createDaysOfTheWeek() {
   addTask('Projeto');
 
   // ex8
+  function coloredSubtitle(color){
+    let taskContainer = document.querySelector('.my-tasks');
+    let setDiv = document.createElement('div');
+    
+    setDiv.className = 'task';
+    setDiv.style.backgroundColor = color;
+    taskContainer.appendChild(setDiv);
+  };
+
+  coloredSubtitle('blue');
