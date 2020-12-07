@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#top-bar {
+    background-color: #1F2041;
+    padding: 20px;
+    text-align: center;
+}
+
+#top-icon {
+    float: left;
+    position: absolute;
+    left: 30px;
+    top: 8px;
+    width: 62px;
+}
+
+h1 {
+    color: wheat;
+    width: 190px;
+    margin: auto;
+}
+
+#menu-box {
+    background-color: #4B3F72;
+    border: black 2px solid;
+}
+
+.box {
+    color: white;
+    display: inline-block;
+    margin: 10px 0 10px 22px;
+}
+
+#text {
+    width: 300px;
+    margin: auto;
+}
+
+#menu-box label{    
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#menu-box input{
+    height: 20px;
+    width: 150px;
+}
