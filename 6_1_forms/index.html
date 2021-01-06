@@ -14,6 +14,7 @@
 
         <form action="" method="GET">
             <fieldset>
+                <legend>Dados Pessoais</legend>
                 <div>
                     <label for="full-name">Nome</label>
                     <input type="text" id="full-name" maxlength="40" required>
@@ -32,14 +33,10 @@
                 <div>
                     <label for="adress">Endereço</label>
                     <input type="text" id="adress" maxlength="200" required>
-                </div>
 
-                <div>
                     <label for="city">Cidade</label>
                     <input type="text" id="city" maxlength="28" required>
-                </div>
 
-                <div>
                     <label for="state">Estado</label>
                     <select name="estado" id="state" required>
                         <!-- Injected by JS -->
@@ -54,17 +51,29 @@
             </fieldset>
 
             <fieldset>
+                <legend>Informações Profissionais</legend>
                 <div>
                     <label for="resume">Resumo do currículo</label>
                     <br>
-                    <textarea name="resume" id="resume" cols="30" rows="10" maxlength="1000"></textarea>
+                    <textarea name="resume" id="resume" cols="30" rows="10" maxlength="1000" required></textarea>
                 </div>
 
                 <div>
-                    <label for="resume">Cargo</label>
-                    <input type="text" maxlength="40">
+                    <label for="role">Cargo</label>
+                    <input type="text" id="role" maxlength="40" required>
+                </div>
+
+                <div>
+                    <label for="role-description">Descirção do cargo</label>
+                    <input type="text" id="role-description" maxlength="500" required>
+                </div>
+
+                <div>
+                    <label for="start-date">Data de início</label>
+                    <input type="text" id="start-date" placeholder="dd/mm/yyyy" required>
                 </div>
             </fieldset>
+            <button type="submit" id="submit">Enviar</button>
         </form>
     </body>
     <script src="script.js"></script>

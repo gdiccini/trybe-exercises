@@ -10,3 +10,16 @@ window.onload = function(){
         comboBox.appendChild(optionElement);
     }
 }
+
+function dateFormatChecker(){
+    const submitBtn = document.getElementById('submit');
+    submitBtn.addEventListener('click', function(){
+        const date = document.getElementById('start-date').value;
+        const dateArray = date.split('/');
+        if (dateArray[0] < 0 || dateArray[0] >=31 || dateArray[1] < 0 || dateArray[1] >= 12 || dateArray[2] < 0){
+            alert('Data Inválida')
+        }
+    });
+}
+
+dateFormatChecker();
