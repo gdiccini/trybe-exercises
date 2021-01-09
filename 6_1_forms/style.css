@@ -1,17 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body {
+  }
+  
+  body {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
     color: rgb(93, 96, 99);
-    background-color: rgb(234, 237, 240);
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.3;
     font-size: 16px;
-    line-height: 1.3;  
-}
-
-.curriculum-form-header {
+    font-family: 'Helvetica', 'Arial', 'Sans-serif';
+  }
+  
+  .form-header {
     text-align: center;
     background-color: rgb(246, 247, 248);
     border: 1px solid rgb(214, 217, 220);
@@ -21,4 +24,13 @@ body {
     padding: 50px;
     margin-right: auto;
     margin-left: auto;
-}
+  }
+  
+  .line-content {
+  margin: 12px;
+  }
+  
+  .button {
+  width: 200px;
+  text-align: center;
+  }
