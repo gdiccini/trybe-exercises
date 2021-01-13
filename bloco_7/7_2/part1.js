@@ -35,14 +35,19 @@ const order = {
 };
 
 const customerInfo = (order) => {
-  console.log(`Olá Ana Silveira, entrega para: ${order['name']}, Telefone: ${order['phoneNumber']}, R. ${order.address['street']}, Nº: ${order.address['number']}, AP: ${order.address['apartment']}`);
+  console.log(`Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order['name']}, Telefone: ${order['phoneNumber']}, R. ${order.address['street']}, Nº: ${order.address['number']}, AP: ${order.address['apartment']}`);
 }
 
 customerInfo(order);
 
 const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
+  const newBuyer = order.name = 'Luiz Silva';
+  const pizzas = Object.keys(order.order.pizza);
+  const drinks = order.order.drinks.coke.type;
+  const newTotal = order.payment.total = '50';
+
+  console.log(`Olá ${newBuyer}, o total do seu pedido de ${pizzas} e ${drinks} é R$ ${newTotal},00.`);
 
 }
 
-// orderModifier(order);
+orderModifier(order);
