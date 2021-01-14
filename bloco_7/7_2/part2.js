@@ -17,3 +17,22 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
+
+const addProperty = (object, key, value) => {
+   return object[key] = value;
+};
+
+addProperty(lesson2, 'turno', 'manhã');
+console.log(lesson2);
+
+const showKeys = (object) => {
+  return Object.keys(object);
+};
+
+console.log(showKeys(lesson1));
+
+const objectSize = (object) => {
+  return showKeys(object).length;
+};
+
+console.log(objectSize(lesson3));
