@@ -36,3 +36,18 @@ const objectSize = (object) => {
 };
 
 console.log(objectSize(lesson3));
+
+const showValues = (object) => {
+  return Object.values(object);
+};
+
+// const allLessons = {
+//   lesson1: Object.assign({}, lesson1),
+//   lesson2: Object.assign({}, lesson2),
+//   lesson3: Object.assign({}, lesson3)
+// };
+// const allLessons = {};
+// allLessons['lesson1'] = Object.assign({}, lesson1);
+// allLessons['lesson2'] = Object.assign({}, lesson2);
+// allLessons['lesson3'] = Object.assign({}, lesson3);
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
