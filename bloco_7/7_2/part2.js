@@ -51,3 +51,25 @@ const showValues = (object) => {
 // allLessons['lesson2'] = Object.assign({}, lesson2);
 // allLessons['lesson3'] = Object.assign({}, lesson3);
 const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
+
+const allStudents = (object) => {
+  return (object.lesson1['numeroEstudantes'] + object.lesson2['numeroEstudantes'] + object.lesson3['numeroEstudantes']);
+};
+
+console.log(allStudents(allLessons));
+
+const getSpecificKey = (object, index) => {
+  return showValues(object)[index];
+};
+
+console.log(getSpecificKey(lesson1, 0));
+
+const verifyPair = (object, key, value) => {
+  if (object[key] === value) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(verifyPair(lesson1, 'materia', 'Matemática'))
