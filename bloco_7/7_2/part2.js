@@ -89,3 +89,23 @@ const mathViewrs = (object, key, value) => {
 }
 
 console.log(mathViewrs(allLessons, 'materia', 'Matemática'));
+
+const teacherReport = (object, teacher) => {
+  let classes = [];
+  let students = 0;
+  const objectValues = Object.values(object);
+  for (let index = 0; index < objectValues.length; index += 1){
+    if (objectValues[index].professor === teacher) {
+      classes.push(objectValues[index].materia);
+      students += objectValues[index].numeroEstudantes;
+    }
+  }
+  let report = {
+    'professor': teacher,
+    'aulas': classes,
+    'estudantes': students
+  }
+  return report;
+}
+
+console.log(teacherReport(allLessons, 'Maria Clara'));
