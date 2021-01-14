@@ -64,6 +64,8 @@ const getSpecificKey = (object, index) => {
 
 console.log(getSpecificKey(lesson1, 0));
 
+
+
 const verifyPair = (object, key, value) => {
   if (object[key] === value) {
     return true;
@@ -72,4 +74,18 @@ const verifyPair = (object, key, value) => {
   }
 };
 
-console.log(verifyPair(lesson1, 'materia', 'Matemática'))
+// console.log(verifyPair(lesson1, 'materia', 'Matemática'))
+
+
+const mathViewrs = (object, key, value) => {
+  let sum = 0;
+  const objectValues = Object.values(object);
+  for (let index = 0; index < objectValues.length; index += 1){
+    if (verifyPair(objectValues[index], key, value)){
+      sum += objectValues[index].numeroEstudantes;
+    }    
+  }
+  return sum;
+}
+
+console.log(mathViewrs(allLessons, 'materia', 'Matemática'));
