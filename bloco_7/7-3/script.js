@@ -75,3 +75,24 @@ assert.strictEqual(myFizzBuzz(6), 'fizz');
 assert.strictEqual(myFizzBuzz(10), 'buzz');
 assert.strictEqual(myFizzBuzz(13), 13);
 assert.strictEqual(myFizzBuzz('15'), false)
+
+// Ex - 5
+
+const obj1 = {
+  title: 'My Title',
+  description: 'My Description',
+};
+
+const obj2 = {
+  description: 'My Description',
+  title: 'My Title',
+};
+
+const obj3 = {
+  title: 'My Different Title',
+  description: 'My Description',
+};
+
+assert.deepStrictEqual(obj1, obj2);
+assert.notDeepStrictEqual(obj1, obj3);
+assert.notDeepStrictEqual(obj2, obj3);
