@@ -58,3 +58,20 @@ myRemoveWithoutCopy(arr2, 2);
 assert.notDeepStrictEqual([1, 2, 3, 4], arr2);
 
 assert.deepStrictEqual(myRemoveWithoutCopy(myRemoveWithoutCopy([1, 2, 3, 4], 5)), [1, 2, 3, 4]);
+
+// Ex - 4
+
+function myFizzBuzz(num) {
+  if (typeof num !== 'number') return false;
+  if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
+  if (num % 3 === 0) return 'fizz';
+  if (num % 5 === 0) return 'buzz';
+  return num;
+}
+
+assert.strictEqual(typeof(myFizzBuzz), 'function');
+assert.strictEqual(myFizzBuzz(15), 'fizzbuzz');
+assert.strictEqual(myFizzBuzz(6), 'fizz');
+assert.strictEqual(myFizzBuzz(10), 'buzz');
+assert.strictEqual(myFizzBuzz(13), 13);
+assert.strictEqual(myFizzBuzz('15'), false)
