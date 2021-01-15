@@ -34,3 +34,27 @@ myRemove(arr1, 3);
 assert.deepStrictEqual(arr1, [1, 2, 3, 4]);
 
 assert.deepStrictEqual(myRemove(arr1, 5), [1, 2, 3, 4]);
+
+// Ex - 3
+
+function myRemoveWithoutCopy(arr, item) {
+  for (let i = 0, len = arr.length; i < len; i += 1) {
+    if (arr[i] === item) {
+      arr.splice(i, 1);
+      i -= 1;
+      len -= 1;
+    }
+  }
+
+  return arr;
+}
+
+assert.strictEqual(typeof(myRemoveWithoutCopy), 'function');
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);
+assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
+
+let arr2 = [1, 2, 3, 4];
+myRemoveWithoutCopy(arr2, 2);
+assert.notDeepStrictEqual([1, 2, 3, 4], arr2);
+
+assert.deepStrictEqual(myRemoveWithoutCopy(myRemoveWithoutCopy([1, 2, 3, 4], 5)), [1, 2, 3, 4]);
