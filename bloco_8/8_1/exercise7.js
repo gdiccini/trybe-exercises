@@ -1,6 +1,5 @@
 const assert = require('assert');
-
-// Ex - 1
+const { truncate } = require('fs');
 
 const books = [
   {
@@ -65,9 +64,22 @@ const books = [
   },
 ];
 
-function authorBornIn1947() {
-  // escreva aqui o seu código
-  return books.find(element => element.author.birthYear === 1947).author.name;
-};
+const expectedResult = false;
 
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
+function authorUnique() {
+  let sum = 0;
+
+  books.sort((a, b) => {
+    if (a.author.birthYear - b.author.birthYear === 0) {
+      sum  += 1;
+    }
+  });
+
+  if (sum = 0) {
+    return true;
+  } else {
+    return false;
+  }  
+}
+
+assert.strictEqual(authorUnique(), expectedResult);
