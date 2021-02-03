@@ -1,5 +1,11 @@
 // Ex1
 
-const sum = (a, b) => a + b;
+function sum(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('parameters must be numbers');
+  }
+
+  return a + b;
+}
 
 module.exports = { sum }
