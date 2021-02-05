@@ -25,5 +25,5 @@ describe('Testes utilizando getUserName async/await', () => {
   it('Returns erro when user is not found', async () => {
     expect.assertions(1);
     await expect(getUserName(10)).rejects.toEqual({ error: 'User with 10 not found.' });
-  })
+  });
 });
