@@ -21,5 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 node_modules
+=======
+>>>>>>> f375e8bf0d6f851481021b18dc99703f6eda34af
