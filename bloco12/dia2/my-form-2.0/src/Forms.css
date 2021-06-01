@@ -1,0 +1,18 @@
+.forms {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.forms label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.forms div {
+  margin-top: 1rem;
+}
+
+.forms input, .forms select {
+  margin-left: 5px;
+}
