@@ -51,18 +51,20 @@ db.movies.updateOne({ title: "Godzilla" }, { $set: { description: "The world is 
 db.movies.updateOne({ title: "Home Alone" }, { $set: { description: "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation." } } );
 
 // Exercício 18 : Utilizando o operador $regex , retorne todos os filmes em que a descrição comece com a palavra "The" .
-
+db.movies.find({ description: { $regex: /^The/ } });
 
 // Exercício 19 : Utilizando o operador $regex , retorne todos os filmes em que a descrição termine com a palavra "humanity." .
-
+db.movies.find({ description: { $regex: /humanity.$/ } });
 
 // Exercício 20 : Crie um índice do tipo text no campo description .
-
+db.movies.createIndex({ description: "text" });
 
 // Exercício 21 : Utilizando o operador $text , busque por filmes que contenham o termo "vacation" .
-
+db.movies.find({ $text: { $search: "vacation" } });
 
 // Exercício 22 : Utilizando o operador $text , busque por filmes que contenham os termos "monstrous" e "criminal" .
-
+db.movies.find({ $text: { $search: "monstrous criminal" } });
 
 // Exercício 23 : Utilizando o operador $text , busque por filmes que contenham a frase "when he is accidentally" .
+db.movies.find({ $text: { $search: '"when he is accidentally"' } });
+db.movies.find( { $text: { $search: "\"when he is accidentally\"" } });
