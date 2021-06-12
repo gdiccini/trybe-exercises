@@ -31,3 +31,31 @@ db.vendas.aggregate([ { $match: { status: { $in: ["ENTREGUE", "EM SEPARACAO"] } 
 
 // Exercício 9 : Descubra quais são os 10 clientes que gastaram o maior valor no ano de 2019 .
 db.vendas.aggregate([ { $match: { status: { $in: ["ENTREGUE", "EM SEPARACAO"] }, dataVenda: { $gte: ISODate('2019-01-01'), $lte: ISODate('2019-12-31')} } }, { $group: { _id: "$clienteId", valorTotal: { $sum: "$valorTotal" } } }, { $sort: { valorTotal: -1 } }, { $limit: 10 }]);
+
+// Exercício 10 : Descubra quantos clientes compraram mais de 5 vezes. Retorne um documento que contenha somente o campo clientes com o total de clientes.
+db.vendas.aggregate([{ $group: { _id: "$clienteId", count: { $sum: 1} } }, { $match: { count: { $gt: 5} } }, { $count: "clientes" }]); // minha resolução
+
+db.vendas.aggregate([ { $group: { _id: "$clienteId", totalCompras: { $sum: 1 } } }, { $match: { totalCompras: { $gt: 5 } } }, { $group: { _id: null, clientes: { $sum: 1 } } }, { $project: { _id: 0 } }]); // gabarito
+
+// Exercício 11 : Descubra quantos clientes compraram menos de três vezes entre os meses de Janeiro de 2020 e Março de 2020 .
+db.vendas.aggregate([ { $match: { dataVenda: { $gte: ISODate('2020-01-01'), $lte: ISODate('2020-03-31') } } }, { $group: { _id: "$clienteId", totalCompras: { $sum: 1} } }, { $match: { totalCompras: { $lt: 3 } } }, { $count: "clientes" }]);
+
+// Exercício 12 : Descubra qual as três uf s que mais compraram no ano de 2020 . Retorne os documentos no seguinte formato:
+{
+  "totalVendas": 10,
+  "uf": "SP"
+}
+
+db.vendas.aggregate([ { $match: { dataVenda: { $gte: ISODate('2020-01-01'), $lte: ISODate('2020-12-31') } } }, { $lookup: { from: "clientes", localField: "clienteId", foreignField: "clienteId", as: "clienteInfo" } }, { $group: { _id: "$clienteInfo.endereco.uf", totalCompras: { $sum: 1 } } }, { $sort: { totalCompras: -1} }, { $limit: 3 }, { $project: { _id: 0, uf: "$_id", totalCompras: "$totalCompras" } }]);
+
+// GABARITO
+db.vendas.aggregate([ { $match: { dataVenda: { $gte: ISODate('2020-01-01') } } }, { $lookup: { from: 'clientes', localField: 'clienteId', foreignField: 'clienteId', as: 'dadosCliente' } }, { $unwind: "$dadosCliente" }, { $group: { _id: "$dadosCliente.endereco.uf", totalVendas: { $sum: 1 } } }, { $sort: { totalVendas: -1 } }, { $limit: 3 }, { $project: { _id: 0, uf: "$_id", totalVendas: 1 } }]);
+
+// Exercício 13 : Encontre qual foi o total de vendas e a média de vendas de cada uf no ano de 2019 . Ordene os resultados pelo nome da uf . Retorne os documentos no seguinte formato:
+{
+  "uf": "MG",
+  "mediaVendas": 9407.129225352113,
+  "totalVendas": 142
+}
+
+db.vendas.aggregate([ { $match: { dataVenda: { $gte: ISODate('2019-01-01'), $lte: ISODate('2019-12-31') } } }, { $lookup: { from: "clientes", localField: "clienteId", foreignField: "clienteId", as: "clienteInfo" } }, { $unwind: "$clienteInfo" }, { $group: { _id: "$clienteInfo.endereco.uf", mediaVendas: { $avg: "$valorTotal" }, totalVendas: { $sum: 1} } }, { $project: { _id: 0, uf: "$_id", mediaVendas: 1, totalVendas: 1 } }, { $sort: { uf: 1 } }]);
