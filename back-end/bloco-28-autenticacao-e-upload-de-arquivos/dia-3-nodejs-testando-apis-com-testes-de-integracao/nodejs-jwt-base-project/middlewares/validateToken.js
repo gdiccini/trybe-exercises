@@ -13,13 +13,9 @@ module.exports = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, secret);
 
-    const user = await model.findUser(decoded.data.username);
-
-    if (user._id !== userId) {
+    if (decoded.id !== userId) {
       return res.status(401).json({ message: 'Acesso negado' });
     }
-
-    req.user = user;
 
     next();
   } catch (err) {
