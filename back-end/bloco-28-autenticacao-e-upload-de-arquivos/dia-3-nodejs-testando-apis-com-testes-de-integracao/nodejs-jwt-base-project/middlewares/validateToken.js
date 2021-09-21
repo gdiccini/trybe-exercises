@@ -17,6 +17,8 @@ module.exports = async (req, res, next) => {
       return res.status(401).json({ message: 'Acesso negado' });
     }
 
+    req.body.username = decoded.username;
+
     next();
   } catch (err) {
     return res.status(401).json({ message: err.message });
