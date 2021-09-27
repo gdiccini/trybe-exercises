@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 const apiRoutes = express.Router();
 
+apiRoutes.get('/ping', (req, res) => res.send('pong'));
 apiRoutes.get('/api/users/:userId', validateJWT, routes.getUserById);
 apiRoutes.get('/api/posts', routes.getPosts);
 apiRoutes.post('/api/users', routes.createUsers);
