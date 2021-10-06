@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import logo from './logo.svg';
+>>>>>>> f375e8bf0d6f851481021b18dc99703f6eda34af
 import './App.css';
 
 const task = (value) => {
